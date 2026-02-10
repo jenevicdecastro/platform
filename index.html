@@ -86,4 +86,60 @@
 images
 product1.jpg
 product2.jpg
+<section class="hero">
+  <h2>Your #1 Electronics Store</h2>
+  <p>Affordable phones, gadgets & accessories</p>
+</section>
+.hero {
+  background: #eef2ff;
+  padding: 30px;
+  text-align: center;
+}
+<div class="product">
+  <img src="images/earbuds.jpg">
+  <h3>Wireless Earbuds</h3>
+  <p>✔ Noise cancellation<br>✔ 24h battery<br>✔ Warranty</p>
+  <p class="price">$35</p>
+  <button onclick="addToCart('Wireless Earbuds', 35)">Add to Cart</button>
+</div>
+<ul id="cart-items"></ul>
+<script>
+let cart = [];
+function addToCart(name, price) {
+  cart.push({ name, price });
+  displayCart();
+}
+function displayCart() {
+  const list = document.getElementById("cart-items");
+  list.innerHTML = "";
+  cart.forEach((item, index) => {
+    list.innerHTML += `
+      <li>${item.name} - $${item.price}
+      <button onclick="removeItem(${index})">X</button></li>`;
+  });
+}
+function removeItem(i) {
+  cart.splice(i, 1);
+  displayCart();
+}
+</script>
+<button onclick="payNow()">Checkout</button>
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<script>
+function payNow() {
+  PaystackPop.setup({
+    key: 'PUBLIC_KEY',
+    email: 'customer@email.com',
+    amount: cart.reduce((s,i)=>s+i.price,0)*100,
+    callback: function(){
+      alert("Payment successful!");
+    }
+  }).openIframe();
+}
+</script>
+@media(max-width:768px){
+  .product {
+    width: 95%;
+  }
+}
 
