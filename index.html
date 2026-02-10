@@ -1,3 +1,33 @@
+index.html
+script.js
+style.css
+<button onclick="payWithPaystack()">Pay Now</button>
+
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<script>
+function payWithPaystack() {
+  let handler = PaystackPop.setup({
+    key: 'YOUR_PUBLIC_KEY',
+    email: 'customer@email.com',
+    amount: 3500 * 100,
+    currency: 'NGN',
+    callback: function() {
+      alert('Payment successful!');
+    }
+  });
+  handler.openIframe();
+}
+</script>
+<button onclick="addToCart('Wireless Earbuds', 35)">Add to Cart</button>
+
+<script>
+let cart = [];
+
+function addToCart(name, price) {
+  cart.push({ name, price });
+  alert(name + " added to cart");
+}
+</script>
 
 
 
