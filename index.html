@@ -110,4 +110,38 @@
   <div class="product-grid">
 
     https://www.google.com/aclk?sa=L&ai=DChsSEwiY38qTus-SAxVUSUECHf8CPfsYACICCAEQAxoCd3M&co=1&gclid=Cj0KCQiAy6vMBhDCARIsAK8rOglyBNOsamjQ_UBca2RTqeRvoT7TibVYRD59EYmxbFL3a2YEm74lF50aAjeqEALw_wcB&cid=CAASuwHkaPmIJgLfonv_qGoyaEuBSZkX1wpJ-OXoiwrIkzAWBwfCbpqii0p8WyVanDfzJWCTPoRFUvFXH9n5zw1t4tLG8obui_d-xaN4XFLyVVoDGgsi_16XJneFiB4KCHUOP2JZI1ELW93KO2I9pB_FlFXH1U7XawPUkSgLF1HyPi-U-9M2YOx2W-xlKMh6_NqxA152AA9Q48D-yOWKGbMDuN1PkcQLY1UTXNCPu3nQLUj1ARxSGucZoXNoMpGw&cce=1&sig=AOD64_3MMM1LrAhycWPvEyUpqYjEju25Eg&ctype=5&q=&ved=2ahUKEwium8eTus-SAxW9TqQEHTpfAx4Q9aACKAB6BAgFEBk&adurl=
+<nav>
+  <a href="#phones">Phones</a>
+  <a href="#accessories">Accessories</a>
+  <a href="#gadgets">Gadgets</a>
+</nav>
 
+nav {
+  background: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #0a3cff;
+  font-weight: bold;
+}
+<button onclick="payWithPaystack()">Pay Now</button>
+
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<script>
+function payWithPaystack() {
+  let handler = PaystackPop.setup({
+    key: 'YOUR_PUBLIC_KEY',
+    email: 'customer@email.com',
+    amount: 3500 * 100,
+    currency: 'NGN',
+    callback: function() {
+      alert('Payment successful!');
+    }
+  });
+  handler.openIframe();
+}
+</script>
