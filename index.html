@@ -1,10 +1,95 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Jhen Business Platform</title>
+  <meta charset="UTF-8">
+  <title>Jhen Online Shop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f6f8;
+    }
+    header {
+      background: #0a3cff;
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+    .container {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .product {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .product h3 {
+      margin: 10px 0;
+    }
+    .price {
+      color: green;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 15px;
+      background: #0a3cff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #222;
+      color: white;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Welcome to Jhen’s Business Platform</h1>
-  <p>This is my first online business website.</p>
+
+<header>
+  <h1>Jhen Online Shop</h1>
+  <p>Quality products • Online business</p>
+</header>
+
+<div class="container">
+
+  <div class="product">
+    <h3>Product One</h3>
+    <p>Short product description</p>
+    <p class="price">$10</p>
+    <a class="btn" href="#">Buy Now</a>
+  </div>
+
+  <div class="product">
+    <h3>Product Two</h3>
+    <p>Short product description</p>
+    <p class="price">$15</p>
+    <a class="btn" href="#">Buy Now</a>
+  </div>
+
+  <div class="product">
+    <h3>Product Three</h3>
+    <p>Short product description</p>
+    <p class="price">$20</p>
+    <a class="btn" href="#">Buy Now</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 Jhen Online Shop</p>
+</footer>
+
 </body>
 </html>
