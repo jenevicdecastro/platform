@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,50 +8,63 @@
 
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      background: #f4f6f8;
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f8;
+      color: #333;
     }
+
     header {
       background: #0a3cff;
       color: white;
-      padding: 30px;
+      padding: 40px 20px;
       text-align: center;
     }
+
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+
+    header p {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+
     .container {
-      padding: 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
     }
-    .product {
+
+    .section {
       background: white;
-      padding: 15px;
+      padding: 30px;
       border-radius: 8px;
-      text-align: center;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     }
-    .product h3 {
-      margin: 10px 0;
+
+    .section h2 {
+      margin-top: 0;
     }
-    .price {
-      color: green;
-      font-weight: bold;
-      margin: 10px 0;
-    }
+
     .btn {
       display: inline-block;
-      padding: 10px 15px;
-      background: #0a3cff;
+      margin-top: 15px;
+      padding: 12px 25px;
+      background: #ff6600;
       color: white;
       text-decoration: none;
       border-radius: 5px;
+      font-weight: bold;
     }
+
     footer {
-      text-align: center;
-      padding: 15px;
       background: #222;
       color: white;
+      text-align: center;
+      padding: 15px;
     }
   </style>
 </head>
@@ -59,36 +73,34 @@
 
 <header>
   <h1>Jhen Online Shop</h1>
-  <p>Quality products • Online business</p>
+  <p>Simple. Reliable. Quality Products.</p>
 </header>
 
 <div class="container">
 
-  <div class="product">
-    <h3>Product One</h3>
-    <p>Short product description</p>
-    <p class="price">$10</p>
-    <a class="btn" href="#">Buy Now</a>
+  <div class="section">
+    <h2>Welcome</h2>
+    <p>
+      Welcome to Jhen Online Shop — your trusted place for quality products
+      and friendly service. We are committed to giving you the best shopping
+      experience.
+    </p>
+    <a href="#" class="btn">Shop Now</a>
   </div>
 
-  <div class="product">
-    <h3>Product Two</h3>
-    <p>Short product description</p>
-    <p class="price">$15</p>
-    <a class="btn" href="#">Buy Now</a>
-  </div>
-
-  <div class="product">
-    <h3>Product Three</h3>
-    <p>Short product description</p>
-    <p class="price">$20</p>
-    <a class="btn" href="#">Buy Now</a>
+  <div class="section">
+    <h2>Why Choose Us?</h2>
+    <ul>
+      <li>✔ Affordable prices</li>
+      <li>✔ Quality products</li>
+      <li>✔ Fast response</li>
+    </ul>
   </div>
 
 </div>
 
 <footer>
-  <p>© 2026 Jhen Online Shop</p>
+  <p>© 2026 Jhen Online Shop. All rights reserved.</p>
 </footer>
 
 </body>
