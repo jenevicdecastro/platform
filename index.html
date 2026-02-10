@@ -1,100 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Jhen Electronics Shop</title>
-  <style>
-    body { font-family: Arial; background: #f4f4f4; margin: 0; padding: 0; }
-    header { background: #0a3cff; color: white; text-align: center; padding: 20px; }
-    .products { padding: 20px; text-align: center; }
-    .product { background: white; width: 260px; display: inline-block; margin: 15px; padding: 15px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-    .product img { width: 100%; border-radius: 5px; }
-    .price { font-weight: bold; color: #0a3cff; }
-    .buy, .add-cart { display: block; margin-top: 10px; padding: 10px; border-radius: 5px; text-decoration: none; text-align: center; cursor: pointer; }
-    .buy { background: #25d366; color: white; }
-    .add-cart { background: #0a3cff; color: white; border: none; }
-    .cart { padding: 20px; background: #eef2ff; margin: 20px; border-radius: 8px; width: 90%; max-width: 600px; margin-left: auto; margin-right: auto; }
-    @media(max-width:768px){ .product { width: 90%; margin: 10px; } }
-  </style>
-</head>
+my-electronics-shop/   <-- root of repo
+ ├── index.html        <-- must be here
+ └── images/
+      ├── earbuds.jpg
+      ├── phone.jpg
+      └── powerbank.jpg
 
-<body>
 
-<header>
-  <h1>Jhen Electronics Shop</h1>
-  <p>Phones • Gadgets • Accessories</p>
-</header>
 
-<section class="products">
 
-  <div class="product">
-    <img src="images/earbuds.jpg" alt="Wireless Earbuds">
-    <h3>Wireless Earbuds</h3>
-    <p class="price">$35</p>
-    <button class="add-cart" onclick="addToCart('Wireless Earbuds',35)">Add to Cart</button>
-    <a href="https://wa.me/1234567890?text=I%20want%20to%20buy%20Wireless%20Earbuds" class="buy">Order on WhatsApp</a>
-  </div>
 
-  <div class="product">
-    <img src="images/phone.jpg" alt="Android Phone">
-    <h3>Android Phone</h3>
-    <p class="price">$180</p>
-    <button class="add-cart" onclick="addToCart('Android Phone',180)">Add to Cart</button>
-    <a href="https://wa.me/1234567890?text=I%20want%20to%20buy%20Android%20Phone" class="buy">Order on WhatsApp</a>
-  </div>
-
-  <div class="product">
-    <img src="images/powerbank.jpg" alt="Power Bank">
-    <h3>Power Bank 20,000mAh</h3>
-    <p class="price">$25</p>
-    <button class="add-cart" onclick="addToCart('Power Bank',25)">Add to Cart</button>
-    <a href="https://wa.me/1234567890?text=I%20want%20to%20buy%20Power%20Bank" class="buy">Order on WhatsApp</a>
-  </div>
-
-</section>
-
-<section class="cart">
-  <h2>Shopping Cart</h2>
-  <ul id="cart-items"></ul>
-  <p><strong>Total:</strong> $<span id="total">0</span></p>
-  <button onclick="checkout()" style="padding:10px; background:#0a3cff; color:white; border:none; border-radius:5px; cursor:pointer;">Checkout (Pay)</button>
-</section>
-
-<script>
-let cart = [];
-let total = 0;
-
-function addToCart(name, price){
-  cart.push({name, price});
-  total += price;
-  displayCart();
-}
-
-function displayCart(){
-  const list = document.getElementById("cart-items");
-  list.innerHTML = "";
-  cart.forEach((item,index)=>{
-    list.innerHTML += `<li>${item.name} - $${item.price} <button onclick="removeItem(${index})">X</button></li>`;
-  });
-  document.getElementById("total").textContent = total;
-}
-
-function removeItem(i){
-  total -= cart[i].price;
-  cart.splice(i,1);
-  displayCart();
-}
-
-function checkout(){
-  if(cart.length===0){
-    alert("Cart is empty!");
-    return;
-  }
-  alert("Total: $"+total+"\nRedirect to payment gateway here.");
-  // Add Paystack / Stripe integration here later
-}
-</script>
-
-</body>
-</html>
 
 
